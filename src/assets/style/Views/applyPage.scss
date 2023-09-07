@@ -1,0 +1,156 @@
+@import '../defaultVariable.scss';
+
+.apply_page {
+  width: 100%;
+  .title {
+    font-weight: 700;
+    font-size: $web-50;
+    text-align: center;
+    margin-top: $web-100;
+  }
+  .sub-title {
+    font-weight: 400;
+    font-size: $web-24;
+    text-align: center;
+    margin-top: $web-16;
+    color: $secondary-color;
+  }
+  .form_apply {
+    max-width: $web-560;
+    margin-top: $web-80;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: $web-64;
+    .imput_form {
+      label {
+        color: #fff;
+        &.required {
+          &::after {
+            content: '*';
+            color: #0e7ee4;
+          }
+        }
+      }
+    }
+    .input_ant_ct_2 {
+      border-bottom-color: #888f95 !important;
+    }
+    textarea {
+      margin-top: $web-16;
+      border: 1px solid #888f95;
+      font-size: $web-24;
+      color: #fff;
+      &.ant-input {
+        padding: $web-16;
+      }
+    }
+    .subTitle {
+      display: none;
+    }
+    .errorMessage {
+      margin: 0;
+    }
+  }
+  .button_submit_apply {
+    max-width: $web-396;
+    margin: 0 auto;
+    margin-top: $web-92;
+    margin-bottom: $web-289;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffff;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.apply_modal {
+  .ant-modal-content {
+    border-radius: 8px;
+    .ant-modal-body {
+      padding: 28px;
+      padding-top: 40px;
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .sub_title {
+        text-align: center;
+        padding-top: 12px;
+        font-size: 16px;
+      }
+    }
+    .ant-modal-footer {
+      padding: 0;
+      border-top: 1px solid #bdc5cb;
+      .ant-btn {
+        height: unset;
+        &.btn_susses {
+          font-weight: 700;
+          font-size: 16px;
+          padding: 16px;
+        }
+      }
+    }
+    .ant-modal-close-x {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .apply_page {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0 $mbw-16;
+    .title {
+      margin-top: $mbw-44;
+      font-size: $mbw-32;
+      // max-width: $mbw-261;
+      margin-inline: auto;
+    }
+    .sub-title {
+      font-size: $mbw-16;
+      margin-top: $mbw-28;
+      color: $secondary-color;
+    }
+    .form_apply {
+      max-width: unset;
+      margin-top: $mbw-88;
+      row-gap: $mbw-56;
+      .imput_form {
+        label {
+          font-size: $mbw-20;
+          margin-bottom: $mbw-16;
+        }
+      }
+      textarea {
+        margin-top: $mbw-16;
+        font-size: $mbw-16;
+        &.ant-input {
+          padding: $mbw-12;
+        }
+      }
+      .subTitle {
+        display: none;
+      }
+      .errorMessage {
+        margin: 0;
+      }
+      .button_submit_apply {
+        max-width: unset;
+        margin-top: $mbw-12;
+        margin-bottom: $mbw-32;
+      }
+    }
+  }
+}

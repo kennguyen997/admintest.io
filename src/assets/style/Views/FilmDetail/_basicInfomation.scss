@@ -1,0 +1,57 @@
+@import '../../defaultVariable.scss';
+@import '../../index.scss';
+.basic_infomation_film {
+  @media (max-width: #{$mobile-width}) {
+    padding: 0 16px;
+  }
+  .name_film {
+    font-size: $web-36;
+    width: 33vw;
+    font-weight: 700;
+    padding-top: 10px;
+    @media (max-width: #{$mobile-width}) {
+      width: 100%;
+      font-size: $mbw-24;
+    }
+  }
+  .infomation_season_epsiode {
+    @extend .flex_row;
+    font-size: $web-24;
+    font-weight: 400;
+    padding: 10px 0;
+    @media (max-width: #{$mobile-width}) {
+      font-size: $mbw-12;
+      font-weight: 500;
+    }
+    .infomation_season {
+      padding: 0 32px;
+      border-left: 1px solid #{$color-main};
+      border-right: 1px solid #{$color-main};
+      @media (max-width: #{$mobile-width}) {
+        padding: 0 16px;
+      }
+    }
+    .infomatiom_all {
+      padding-right: 32px;
+      @media (max-width: #{$mobile-width}) {
+        padding-right: 16px;
+      }
+    }
+    .infomation_epsiode {
+      padding-left: 32px;
+      @media (max-width: #{$mobile-width}) {
+        padding-left: 16px;
+      }
+    }
+  }
+  .infomation_desciption {
+    font-size: $web-20;
+    font-weight: 400;
+    color: $secondary-color;
+    padding-top: 20px;
+    @media (max-width: #{$mobile-width}) {
+      font-size: $mbw-14;
+      font-weight: 400;
+    }
+  }
+}

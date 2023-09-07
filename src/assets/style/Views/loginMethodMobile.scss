@@ -1,0 +1,56 @@
+@import '../defaultVariable.scss';
+
+.login_method_mobile_page {
+  padding: 0 $mbw-16;
+  .logoBig {
+    // font-family: 'Galada', cursive;
+    // color: #0e7ee4;
+    margin: auto;
+    // font-size: $mbw-60;
+    width: $mbw-261;
+  }
+  .btn_group {
+    width: 100%;
+  }
+  .bottomSignUp {
+    display: flex;
+    justify-content: center;
+    margin-top: $mbw-18;
+    margin-bottom: $mbw-68;
+    .no_account {
+      font-weight: 400;
+      font-size: $mbw-14;
+      color: #bdc5cb;
+      margin-right: $mbw-5;
+    }
+    .forgot_password {
+      font-weight: 400;
+      font-size: $mbw-14;
+      text-decoration-line: underline;
+      color: #ffff;
+    }
+  }
+  .button_ant_ct {
+    display: flex;
+    > span {
+      flex-grow: 1;
+      margin-left: -$mbw-24;
+      text-align: center;
+    }
+    &.btnGG {
+      background: #fff;
+      color: #222222;
+      font-weight: 700;
+    }
+    &.btnKakao {
+      background: #ffca42;
+      color: #3c1e1e;
+      font-weight: 700;
+    }
+    &.btnEmail {
+      background: #5a5a5a;
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import '../defaultVariable.scss';
+
+.event_detail_page {
+  padding: 0 31.67vw;
+  .title_area {
+    display: flex;
+    align-items: center;
+    margin-top: 2.08vw;
+    margin-bottom: 0.9375vw;
+    justify-content: space-between;
+    .title {
+      font-weight: 700;
+      font-size: 1.875vw;
+    }
+    .ant-btn-icon-only {
+      width: unset;
+      svg {
+        width: 2.7vw;
+        height: 2.7vw;
+      }
+    }
+  }
+  .event_data {
+    box-sizing: border-box;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.833vw;
+    .event_img {
+      width: 100%;
+      height: 24.44vw;
+    }
+    .infor_area,
+    .infor_area_mobile {
+      padding-bottom: 1.25vw;
+      .status_event {
+        padding-right: 8px;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          background: white;
+          top: 50%;
+          transform: rotate(0deg) scale(1) translate(0, -50%);
+          right: 0;
+          height: 65%;
+          width: 1px;
+        }
+      }
+      .timeline {
+        padding-left: 8px;
+        color: $light_black_1;
+      }
+      .lookup {
+        color: $light_black_1;
+      }
+      .information {
+        padding-top: 0.83vw;
+        padding-bottom: 2.083vw;
+        color: $light_black_1;
+        white-space: pre-wrap;
+      }
+      .button_ant_ct {
+        display: block;
+        margin-inline: auto;
+        min-width: 20.625vw;
+      }
+    }
+    .infor_area_mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .event_detail_page {
+    padding: 0;
+    .title_area {
+      display: none;
+    }
+    .event_data {
+      font-size: 3.73vw;
+      .event_img {
+        width: 100%;
+        height: 66.67vw;
+      }
+      .infor_area {
+        display: none;
+      }
+      .infor_area_mobile {
+        display: block;
+        padding: 3.2vw 16px 16px 16px;
+        .status_event {
+          padding-right: 8px;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            background: white;
+            top: 50%;
+            transform: rotate(0deg) scale(1) translate(0, -50%);
+            right: 0;
+            height: 65%;
+            width: 1px;
+          }
+        }
+        .information {
+          padding-block: 16px;
+        }
+        .timeline {
+          padding-left: 8px;
+          color: $light_black_1;
+        }
+        .lookup {
+          color: $light_black_1;
+        }
+      }
+    }
+  }
+}

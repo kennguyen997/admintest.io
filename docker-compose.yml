@@ -1,0 +1,28 @@
+version: '3'
+services:
+  node-builder:
+    image: node:16.14.0
+    volumes:
+      - ./:/var/www/html
+    container_name: node-builder
+    command: >
+      bash -c "cd /var/www/html && yarn install"
+
+  terafty_web:
+    depends_on:
+      - node-builder
+    image: nginx
+    ports:
+      - '8080:80'
+    restart: always
+    volumes:
+      - ./config/nginx-custom.conf:/etc/nginx/conf.d/default.conf
+      - ./config/mime.types:/etc/nginx/mime.types
+      - ./build:/usr/share/nginx/html
+    container_name: terafty_web
+    networks:
+      - terafty-web
+
+networks:
+  terafty-web:
+    driver: bridge

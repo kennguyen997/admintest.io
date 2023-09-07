@@ -1,0 +1,233 @@
+@import './defaultVariable.scss';
+
+.header {
+  height: $header-height;
+  width: 100vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: 0 5.2vw;
+  display: flex;
+  align-items: center;
+  transition: 1.2s;
+  max-width: 100%;
+  &.black {
+    background-color: $background-color;
+  }
+  &.white {
+    background: linear-gradient(180deg, rgba(19, 26, 32, 0.7) 0%, rgba(19, 26, 32, 0) 100%);
+  }
+  .logo a,
+  .onlyLogo a {
+    // font-family: 'Galada', cursive;
+    // font-size: 2.084vw;
+    // color: #0e7ee4;
+    // letter-spacing: -1px;
+    img {
+      width: $web-229;
+    }
+  }
+  .ant-dropdown-menu-item:hover {
+    background-color: unset;
+  }
+}
+
+.nav_main {
+  font-weight: 700;
+  font-size: 1.04vw;
+  color: white;
+}
+
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 3.38vw;
+  .space_nav {
+    gap: 2.91vw !important;
+  }
+  &.disable {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.header_right {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  position: relative;
+  .input_search {
+    max-width: 15vw;
+    font-weight: 400;
+    font-size: 14px !important;
+    margin-inline: 12px;
+    padding: 4px 12px;
+    background: #2a343d !important;
+    color: white;
+    border: unset;
+    height: 28px;
+    border: none;
+    &.unactive {
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s;
+    }
+  }
+  .searchIcon {
+    min-width: 28px !important;
+    border-radius: 50% !important;
+    width: 28px;
+    height: 28px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    color: white;
+    background-image: url(../icons/search.svg);
+    margin-right: 28px;
+  }
+  .collapse_user {
+    position: absolute;
+    bottom: 16px;
+    .ant-dropdown-menu {
+      background: #131a20 !important;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      padding: 15px;
+      color: white;
+      .ant-dropdown-menu-item {
+        padding: 0px;
+      }
+      .my_page {
+        display: flex;
+        justify-content: center;
+        color: white !important;
+        background: #131a20 !important;
+        border-radius: 0;
+        white-space: nowrap !important;
+      }
+      .sign_out {
+        color: #fe9738 !important;
+        background: #131a20 !important;
+        border-radius: 0;
+      }
+    }
+  }
+  .btn_down {
+    height: $header-height;
+    display: flex;
+    svg {
+      margin-block: auto;
+    }
+  }
+}
+
+.ant-drawer-content {
+  // background-color: #131a20;
+  .name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .mypage {
+    color: #bdc5cb;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+// @media (max-width: 1200px) {
+//   .header {
+//     height: 60px;
+//     padding: 16px;
+//     align-items: flex-start;
+//     .logo a {
+//       font-size: 24px;
+//       color: #ffff;
+//       margin-left: 12px;
+//     }
+//     .menubtn {
+//       display: block;
+//       border: unset;
+//     }
+//     .menuRight {
+//       display: block;
+//       margin-left: auto;
+//       border: unset;
+//     }
+//     .title {
+//       display: -webkit-box;
+//       font-weight: 700;
+//       font-size: 20px;
+//       color: #ffffff;
+//       padding: 0 16px;
+//       margin-block: auto;
+//       flex-grow: 1;
+//     }
+//     .nav_header {
+//       display: none;
+//     }
+//   }
+//   .onlyLogo {
+//     display: none;
+//   }
+// }
+
+.header_reponsive {
+  height: $header-height-mobile;
+  padding: 16px;
+  // align-items: flex-start;
+  .logo {
+    a {
+      font-size: 24px;
+      color: #ffff;
+      // margin-left: 12px;
+      img {
+        width: 100px;
+        margin-top: -7px;
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+  .menubtn {
+    display: block;
+    border: unset;
+  }
+  .menuRight {
+    display: block;
+    margin-left: auto;
+    border: unset;
+  }
+  .title {
+    display: -webkit-box;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    padding-left: 16px;
+    margin-block: auto;
+    flex-grow: 1;
+  }
+  .nav_header {
+    display: none;
+  }
+  .iconCustom {
+    svg {
+      max-width: 26px !important;
+      max-height: 26px !important;
+      min-width: 24px !important;
+      min-height: 24px !important;
+    }
+  }
+}
+
+.repon_drawer {
+  .nav_main {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,59 @@
+@import './defaultVariable.scss';
+
+.bottom_area {
+  margin-inline: 5.2vw;
+  border-top: 1px solid #888f95;
+  margin-top: 3.54vw;
+  padding: 3.54vw 7vw 6.25vw 7vw;
+  .logo_bottom {
+    font-family: 'Galada';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5625vw;
+    display: flex;
+    align-items: center;
+    letter-spacing: -1px;
+    color: #888f95;
+  }
+  .content_area {
+    padding-top: 8px;
+    display: flex;
+    .content {
+      min-width: 17.34vw;
+      height: 5.2vw;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.73vw;
+      color: #888f95;
+      .title_bottom {
+        font-weight: 700 !important;
+      }
+    }
+    .content_right {
+      min-width: 11vw;
+      margin-left: 5.3vw;
+    }
+  }
+  .content_bottom {
+    margin-top: 1.66vw;
+    font-weight: 700;
+    font-size: 0.729vw;
+    color: #888f95;
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .bottom_area {
+    margin-top: 13.8vw;
+    margin-inline: 5.33vw;
+    margin-bottom: 41.86vw;
+    padding: 0;
+    border: unset;
+    .content_area {
+      padding: 0;
+      .content {
+        font-size: 3.73vw;
+      }
+    }
+  }
+}

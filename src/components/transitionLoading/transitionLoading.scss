@@ -1,0 +1,16 @@
+.loading-enter {
+  opacity: 0;
+  visibility: hidden;
+}
+.loading-enter-done {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1000ms ease-in-out;
+}
+.loading-exit {
+  opacity: 1;
+}
+.loading-exit-active {
+  display: none !important;
+  opacity: 0;
+}

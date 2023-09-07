@@ -1,0 +1,150 @@
+@import '../defaultVariable.scss';
+
+.home_page {
+  margin-top: -$header-height;
+  // min-height: 100vh;
+  .title {
+    font-weight: 700;
+    font-size: $web-24;
+    margin-top: $web-20;
+    margin-bottom: $web-16;
+  }
+  .bgrCarosel {
+    width: 100%;
+    height: 31.458vw !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .information {
+      position: absolute;
+      bottom: 4.58vw;
+      left: $web-100;
+      color: #ffff;
+      .title {
+        font-weight: 700;
+        font-size: $web-50;
+        margin-bottom: 8px;
+      }
+      .describe {
+        font-weight: 500;
+        font-size: $web-20;
+        max-width: 13.49vw;
+      }
+    }
+  }
+  .carosel_area {
+    position: relative;
+    .ant-carousel {
+      width: 100vw;
+      max-width: 100%;
+      .slick-slide {
+        text-align: center;
+        height: 31.458vw;
+        min-height: 31.458vw;
+        overflow: hidden;
+      }
+      .slick-dots {
+        right: unset;
+        justify-content: left;
+        margin-left: 5.2vw;
+        margin-bottom: 0;
+        bottom: 1.875vw;
+        li {
+          height: 0.83vw;
+          width: 0.83vw;
+          button {
+            height: 0.83vw;
+            width: 0.83vw;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .ant-carousel .slick-slide > div {
+      height: 100%;
+      & > div {
+        height: 100%;
+        position: relative;
+      }
+    }
+    .buttonMethods {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 3.33vw;
+      .ant-btn-icon-only {
+        width: 1.875vw;
+        height: 1.875vw;
+        svg {
+          width: 1.875vw;
+          height: 1.875vw;
+        }
+      }
+    }
+  }
+}
+.populer_container {
+  padding: 0 5.2vw;
+}
+
+@media (max-width: #{$mobile-width}) {
+  .home_page {
+    margin-top: -$header-height-mobile;
+    .title {
+      font-weight: 700;
+      font-size: $mbw-20;
+      margin-top: $mbw-12;
+      margin-bottom: $mbw-16;
+    }
+    .bgrCarosel {
+      height: 132vw !important;
+      background-position: center;
+      .information {
+        left: 0;
+        text-align: left;
+        padding: 0 20px;
+        bottom: $mbw-32;
+        .title {
+          font-size: $mbw-32;
+          margin-bottom: 12px;
+        }
+        .describe {
+          font-size: $mbw-16;
+          max-width: unset;
+        }
+      }
+    }
+    .carosel_area {
+      .ant-carousel {
+        .slick-slide {
+          height: 132vw;
+          min-height: 132vw;
+        }
+        .slick-dots {
+          right: 0;
+          bottom: 3vw;
+          justify-content: center;
+          margin-left: 15%;
+          li {
+            height: 2.13vw;
+            width: 2.13vw;
+            button {
+              height: 2.13vw;
+              width: 2.13vw;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      .buttonMethods {
+        display: none;
+      }
+    }
+  }
+  .populer_container {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import '~antd/dist/antd.css';
+@import './defaultVariable.scss';
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-display: swap;
+  box-sizing: border-box;
+  color: #000;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $background-color;
+  max-width: 100vw;
+  margin: 0;
+  color: #{$color-main};
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+section,
+main,
+header,
+footer,
+nav,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  background-color: $background-color;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+  &.bgMain {
+    background-image: linear-gradient(
+        192.97deg,
+        $background-color 15.28%,
+        rgba(19, 26, 32, 0.85) 39.39%,
+        $background-color 65.06%
+      ),
+      url('../image/bgMain.svg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .app-scroll-wrapper {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    .app-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      .view {
+        width: 100vw;
+        height: 100%;
+        max-width: 100%;
+        &.center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        &.inline {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.hiden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.ai-c {
+  align-items: center;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.d-flex {
+  display: flex;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+.pt-16 {
+  padding-top: $web-16;
+}
+
+.pt-40 {
+  padding-top: $web-40 !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.vw-100 {
+  width: 100vw;
+}
+
+.ml-20 {
+  margin-left: 20px !important;
+}
+
+.mt-8 {
+  margin-top: 8px !important;
+}
+
+.mr-8 {
+  margin-right: 8px !important;
+}
+
+.mb-8 {
+  margin-bottom: 8px !important;
+}
+
+.ml-8 {
+  margin-left: 8px !important;
+}
+
+.mb-16 {
+  margin-bottom: $web-16 !important;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.mt-32 {
+  margin-top: $web-32 !important;
+  @media (max-width: #{$mobile-width}) {
+    margin-top: $mbw-32 !important;
+  }
+}
+
+.mt-28 {
+  margin-top: 28px !important;
+}
+
+.mb-40 {
+  margin-bottom: $web-40 !important;
+}
+
+.color-white {
+  color: #ffff;
+}
+
+.color-active {
+  color: $main;
+}
+.bg-1B242D {
+  background: #1b242d;
+}
+.opaciti-0 {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fs-24 {
+  font-size: 24px;
+}
+.fs-36 {
+  font-size: $web-36;
+}
+.fs-50 {
+  font-size: $web-50;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-700 {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-overflow {
+  &-1 {
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-2 {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-3 {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.loading_waiting_api {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 2em;
+  span {
+    width: 0.3em;
+    height: 1em;
+    background-color: #3cefff;
+  }
+
+  span:nth-of-type(1) {
+    animation: grow 1s -0.45s ease-in-out infinite;
+  }
+
+  span:nth-of-type(2) {
+    animation: grow 1s -0.3s ease-in-out infinite;
+  }
+
+  span:nth-of-type(3) {
+    animation: grow 1s -0.15s ease-in-out infinite;
+  }
+
+  span:nth-of-type(4) {
+    animation: grow 1s ease-in-out infinite;
+  }
+
+  @keyframes grow {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+
+    50% {
+      transform: scaleY(2);
+    }
+  }
+}
+.padding-10vh {
+  padding: 0 12.76vw;
+}
+.pagination {
+  .ant-pagination-item a {
+    background-color: #2a343d !important;
+    color: #fff;
+  }
+  .ant-pagination-item-active a {
+    color: #1890ff;
+  }
+  .ant-pagination-item-link {
+    background-color: #2a343d !important;
+  }
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    color: #fff;
+  }
+  .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+  .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+    color: #888f95;
+  }
+  .ant-pagination-disabled .ant-pagination-item-link {
+    color: #888f95 !important;
+  }
+}
+
+li {
+  list-style: none;
+}
+ul {
+  padding: 0px;
+}
+.list-film {
+  margin-right: -10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.list-film-for-mobile {
+  margin-right: -10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  &.loading {
+    opacity: 0;
+  }
+  @media (max-width: #{$mobile-width}) {
+    display: flex;
+    flex-direction: row;
+    position: none;
+    overflow: auto;
+    width: 92vw;
+  }
+}
+.item {
+  cursor: pointer;
+  float: left;
+  width: 19%;
+  position: relative;
+  margin: 0 1% 10px 0;
+  @media (max-width: #{$mobile-width}) {
+    width: 29vw;
+    margin: 0 1.5vw 1.5vw 0;
+  }
+}
+
+.american_flag {
+  cursor: pointer;
+  width: fit-content;
+  width: 20px;
+  height: 20px;
+  background-image: url(../icons/americanFlag.svg);
+}
+.korean_flag {
+  cursor: pointer;
+  width: fit-content;
+  width: 20px;
+  height: 20px;
+  background-image: url(../icons/koreanFlag.svg);
+}
+
+.item-for-mobile {
+  cursor: pointer;
+  float: left;
+  width: 19%;
+  position: relative;
+  margin: 0 1% 10px 0;
+  @media (max-width: #{$mobile-width}) {
+    width: 29vw;
+    margin: 0 1.5vw 1.5vw 0;
+  }
+}
+.video-react .video-react-big-play-button {
+  display: none;
+}
+
+.no-padding-button {
+  font-size: 14;
+  .ant-btn {
+    padding: 0 !important;
+  }
+}
+
+.errorImg {
+  object-fit: contain !important;
+}
+//main
+// @import './main';
+@import './header.scss';
+
+// filmDetail
+@import './custom.scss';

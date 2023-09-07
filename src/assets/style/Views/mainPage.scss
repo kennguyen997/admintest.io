@@ -1,0 +1,58 @@
+@import '../defaultVariable.scss';
+
+.main_page {
+  .font_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    width: $web-396;
+  }
+
+  .logoBig {
+    // font-family: 'Galada', cursive;
+    // font-size: $web-100;
+    // color: #0e7ee4;
+    width: $web-560;
+  }
+
+  .subtit {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $web-50;
+    color: #ffffff;
+    margin-top: $web-24;
+    margin-bottom: $web-92;
+  }
+
+  .introduce {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $web-20;
+    color: #ffffff;
+    margin-bottom: $web-22;
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .main_page {
+    padding: 0 $mbw-16;
+    .logoBig {
+      margin: auto;
+      // font-size: $mbw-60;
+      width: $mbw-261;
+    }
+    .subtit {
+      display: none;
+    }
+    .introduce {
+      font-size: $mbw-16;
+      margin-bottom: $mbw-22;
+    }
+    .font_main {
+      width: 100%;
+      margin-bottom: $mbw-106;
+    }
+  }
+}

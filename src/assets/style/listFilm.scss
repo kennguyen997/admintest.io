@@ -1,0 +1,238 @@
+@import './defaultVariable.scss';
+
+.crowdfunding {
+  .crowdfunding_item {
+    border: 1px solid #2a343d;
+    border-radius: 0.2vw;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative !important;
+    .filmImage {
+      width: 100%;
+      height: calc(13.856vw / 16 * 9);
+      object-fit: cover;
+    }
+    .infor_area {
+      padding: $web-16 $web-12 0 $web-12;
+      flex-grow: 1;
+      // display: inline-grid;
+      display: flex;
+      flex-direction: column;
+      .infor {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        .name {
+          font-weight: 400;
+          font-size: 1vw;
+          margin-bottom: 0.78vw;
+          color: $light_black_1;
+        }
+        .price {
+          margin-top: auto;
+          font-size: 1.25vw;
+          text-align: right;
+          word-break: break-all;
+          border-bottom: 1px solid #696969;
+          padding-bottom: 8px;
+        }
+      }
+      .foot_info {
+        height: $web-36;
+        margin-top: $web-12;
+        font-size: $web-16;
+        color: #ececec;
+        display: flex;
+        justify-content: space-between;
+      }
+      .foot_info > span:first-child {
+        float: left;
+      }
+      .foot_info > span:nth-child(2) {
+        float: right;
+      }
+    }
+  }
+}
+
+.streaming {
+  .streaming_item {
+    cursor: pointer;
+    position: relative;
+
+    .filmImage {
+      object-fit: cover;
+      width: 100%;
+      height: calc(((100vw - 10.4vw - 60px) / 6) / 16 * 9);
+      border-radius: 0.2vw;
+    }
+    .name {
+      margin-top: 0.416vw;
+      font-weight: 400;
+      font-size: 0.83vw;
+      margin-bottom: 1vw;
+      color: $light_black_1;
+    }
+    .name_in_home_page {
+      margin-top: 0.416vw;
+      font-weight: 400;
+      font-size: 0.83vw;
+      margin-bottom: 1vw;
+      color: $light_black_1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .price {
+        margin-bottom: 0.36vw;
+        font-size: 1.25vw;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.listFilm {
+  width: -webkit-fill-available;
+  &.row-20 {
+    margin-inline: -0.52vw;
+    row-gap: 1vw !important;
+    > .ant-col {
+      padding: 0 0.52vw;
+    }
+  }
+  &.row-8 {
+    margin-inline: -0.2vw;
+    row-gap: 1vw !important;
+    > .ant-col {
+      padding: 0 0.2vw;
+    }
+  }
+}
+
+.crowdfunding_item,
+.streaming_item {
+  .updated_at {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+  }
+  .updated_at > div {
+    display: block;
+  }
+  .updated_at > div > span {
+    position: absolute;
+    bottom: $web-8;
+    right: 0;
+    display: block;
+    float: right;
+    background-color: #333333;
+    padding-left: 5px;
+    padding-right: 5px;
+    opacity: 0.8;
+    width: auto;
+    text-align: right;
+    font-size: 0.8vw !important;
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .crowdfunding {
+    .crowdfunding_item {
+      border-radius: 1vw;
+      .filmImage {
+        height: calc((96vw - 32px) / 16 * 11);
+      }
+      .infor_area {
+        padding: 2vw;
+        .infor {
+          .name {
+            font-weight: 400;
+            font-size: 3.2vw;
+            margin-bottom: 4.26vw;
+          }
+          .price {
+            margin-bottom: 0;
+            font-size: 4.26vw;
+          }
+        }
+        .foot_info {
+          height: $mbw-16;
+          margin-top: $mbw-5;
+          font-size: $mbw-12;
+        }
+      }
+    }
+  }
+  .streaming {
+    .streaming_item {
+      cursor: pointer;
+      .filmImage {
+        object-fit: cover;
+        border-radius: 2.1vw;
+        height: calc((100vw - 62px) / 24 * 11);
+      }
+      .name {
+        margin-block: 1vw;
+        font-size: 3.73vw;
+      }
+      .name_in_home_page {
+        margin-block: 1vw;
+        font-size: 3.73vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .price {
+          margin-bottom: 0;
+          font-size: 3.73vw;
+        }
+      }
+    }
+  }
+  .listFilm {
+    // width: 100%;
+    &.row-20 {
+      margin-inline: -1vw;
+      row-gap: 2vw !important;
+      > .ant-col {
+        padding: 1vw;
+      }
+    }
+    &.row-8 {
+      margin-inline: -1vw;
+      row-gap: 2vw !important;
+      > .ant-col {
+        padding: 0 1vw;
+      }
+    }
+  }
+  .crowdfunding_item,
+  .streaming_item {
+    .updated_at > div > span {
+      bottom: $web-22;
+      font-size: 2vw !important;
+    }
+  }
+}
+
+@media (max-width: #{$mobile-width}) {
+  .ant-col-xs-8 {
+    display: block;
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .ant-col-xs-12 {
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: #{$mobile-width}) {
+  .ant-col-md-5 {
+    display: block;
+    flex: 0 0 20%;
+    max-width: 40%;
+  }
+}

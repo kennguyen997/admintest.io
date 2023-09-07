@@ -1,0 +1,14 @@
+h3 {
+  color: inherit;
+  font-weight: bold;
+}
+
+ul {
+  padding-inline-start: 1rem;
+  list-style-type: '* ';
+
+  > li {
+    margin-bottom: 1rem;
+    list-style: inherit;
+  }
+}
