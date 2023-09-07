@@ -13,7 +13,7 @@ const NavLinkDrawer: FC<NavLinkProps> = (props) => {
     <NavLink
       {...props}
       style={({ isActive }) => ({
-        color: isActive ? '#fff' : '#888F95',
+        color: isActive ? '#fff' : '#fff',
       })}
     />
   );
@@ -25,29 +25,8 @@ type Props = {
   account: ResultAccount | null;
 };
 
-const DrawerHeader: FC<Props> = ({ account, showDrawer, setShowDrawer }) => {
+const DrawerHeader: FC<Props> = ({ showDrawer, setShowDrawer }) => {
   const [t] = useTranslation();
-
-  const inforUser = () => {
-    if (!account) {
-      return (
-        <Link to={'/login-method'}>
-          <div className="name">{t(common.login_is_required)}</div>
-          <div className="mypage_edit">{t(common.login_is_required)}</div>
-        </Link>
-      );
-    } else {
-      return (
-        <>
-          <div className="name">{account.userName}</div>
-          <Link to={'/mypage'} className="mypage">
-            {t(common.my_page)}
-          </Link>
-        </>
-      );
-    }
-  };
-
   return (
     <Drawer
       placement="left"
@@ -57,17 +36,10 @@ const DrawerHeader: FC<Props> = ({ account, showDrawer, setShowDrawer }) => {
       width={269}
       zIndex={100}
       className="repon_drawer"
-      // drawerStyle={{ backgroundColor: '#131A20' }}
       bodyStyle={{ padding: '64px 16px 16px 16px' }}
     >
       <Space size={24} align="start" direction="vertical">
-        <Space size={6}>
-          <Avatar size={60} src={`${account?.avatar}`} icon={<UserOutlined />} />
-          <Space size={4} align="start" direction="vertical">
-            {inforUser()}
-          </Space>
-        </Space>
-        <NavLinkDrawer to={'/home'} className="nav_main">
+        <NavLinkDrawer to={'/'} className="nav_main">
           {t(common.home)}
         </NavLinkDrawer>
         <NavLinkDrawer to={'/crowdfunding'} className="nav_main">
@@ -79,38 +51,9 @@ const DrawerHeader: FC<Props> = ({ account, showDrawer, setShowDrawer }) => {
         <NavLinkDrawer to={'/events'} className="nav_main">
           {t(common.events)}
         </NavLinkDrawer>
-        <a href="https://www.teraftyblog.com" className="nav_main" style={{color: '#888F95'}}>{t(common.blog)}</a>
-        <a href="https://teraftykorea.com" className="nav_main" style={{color: '#888F95'}}>{t(common.store)}</a>
         <NavLinkDrawer to={'/apply'} className="nav_main">
           {t(common.apply)}
         </NavLinkDrawer>
-        {localStorage.getItem('lang') == 'korean' ? (
-          <Button
-            type="text"
-            className="p-0 w-100 sign_out"
-            onClick={() => {
-              store.dispatch(changeLanguageRedux('english'));
-            }}
-          >
-            <Space>
-              <div className="american_flag"></div>
-              <div style={{ color: '#fff' }}>{'ENG'}</div>
-            </Space>
-          </Button>
-        ) : (
-          <Button
-            type="text"
-            className="p-0 w-100 sign_out"
-            onClick={() => {
-              store.dispatch(changeLanguageRedux('korean'));
-            }}
-          >
-            <Space>
-              <div className="korean_flag"></div>
-              <div style={{ color: '#fff' }}>{'한국어'}</div>
-            </Space>
-          </Button>
-        )}
       </Space>
     </Drawer>
   );

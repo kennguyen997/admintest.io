@@ -230,4 +230,12 @@
   .nav_main {
     font-size: 20px;
   }
+  .ant-drawer-header {
+    background: unset;
+  }
+  .ant-drawer-content {
+    background: rgba(0,0,0,.5);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    backdrop-filter: blur(10px);
+  }
 }

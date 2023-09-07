@@ -67,7 +67,9 @@
     "lint:fix": "npm run prettier:fix && eslint ./src --ext .js,.jsx,.ts,.tsx --cache --fix",
     "prettier": "prettier --check ./src",
     "prettier:fix": "prettier --write ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -99,6 +101,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^6.0.0",
     "husky": "^7.0.4",
     "i": "^0.3.7",
     "lint-staged": "^12.3.5",
